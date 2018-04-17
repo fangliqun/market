@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>登录</title>
+<link rel="stylesheet" href="css/login.css"/><!-- 最前面 -->
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<link rel="stylesheet" href="puck/css/puck.css"/><!-- 最前面 -->
+<script type="text/javascript" src="puck/puck.all.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+
+</head>
+<body>
+	<div class="form">
+		<form>
+		<div class="username"><span class="np">用户名:</span><input  class="inventory" maxlength="30" type="text" id="username"   onKeyUp="value=value.replace(/[^\w]/g,'')" name="username"/></div>
+		<div class="password"><span class="np">密码:</span><input  class="inventory" maxlength="30" type="password" id="password" onKeyUp="value=value.replace(/[^\w]/g,'')"  name="password"/></div>
+		<div class="login"><input type="button" value="登录"/></div>
+		</form>
+	</div>
+</body>
+</html>

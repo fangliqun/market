@@ -1,0 +1,216 @@
+@CHARSET "UTF-8";
+
+html {
+	
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	font-size: 14px;
+	font-family: '微软雅黑';
+	overflow: hidden;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	list-style: none;
+}
+
+.l {
+	float: left;
+}
+
+.r {
+	float: right;
+}
+
+.foot {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+a:hover {
+	color: #008BFF;
+}
+
+.foot .foot-content {
+	background: url("../images/copyright_logo.png") no-repeat left center;
+	width: 310px;
+	margin: auto;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 100px;
+	color: #666;
+	font-size: 12px;
+}
+
+.h-typetext {
+	vertical-align: middle;
+	font-size: 14px;
+	height: 28px;
+	line-height: 30px;
+	padding: 5px;
+	border: 1px #cecece solid;
+	width: 188px;
+	border-radius: 4px;
+	color: #999;
+}
+
+input.typetext {
+	border-radius: 4px;
+}
+
+.cl {
+	clear: both;
+	width: 0px;
+	height: 0px;
+}
+
+table {
+	margin: 0;
+	padding: 0;
+}
+
+table td {
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+}
+
+img {
+	margin: 0;
+	padding: 0;
+}
+
+.main-body {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+.fn {
+	height: 32px;
+}
+
+.fn .btn-div {
+	height: 24px;
+	float: left;
+	margin-top: 4px;
+}
+
+.fn .btn-div div {
+	float: left;
+	height: 24px;
+	line-height: 24px;
+	padding: 0px 8px 0px 28px;
+	cursor: pointer;
+	margin: 0 5px;
+	border: 1px solid white;
+}
+
+.fn .btn-div div:HOVER {
+	border: 1px solid #D8D8D2;
+}
+
+.fn .btn-div .add {
+	background: url("../../commons/images/toolbar_ico_add.png") no-repeat
+		8px 4px;
+}
+
+.fn .btn-div .mod {
+	background: url("../../commons/images/toolbar_ico_modify.png") no-repeat
+		4px 1px;
+}
+
+.fn .btn-div .del {
+	background: url("../../commons/images/toolbar_ico_del.png") no-repeat
+		8px 4px;
+}
+
+.fn .btn-div .senddown {
+	background: url("../../commons/images/toolbar_ico_refresh.png") no-repeat 
+		0px 0px;
+	background-size: 18px 18px;
+	float: left;
+	width: 18px;
+	height: 18px;
+	margin-left: -18px;
+	margin-top: 3px;
+}
+
+.fn .btn-div .sync {
+	background: url("../../commons/images/list_btn_down.png") no-repeat 8px
+		4px;
+}
+
+.fn .btn-div .confirm-alarm {
+	background: url("../../commons/images/toolbar_ico_confirm.png")
+		no-repeat 8px 4px;
+}
+
+.fn .btn-div .err-alarm {
+	background: url("../../commons/images/toolbar_ico_distort.png")
+		no-repeat 8px 4px;
+}
+
+.fn .btn-div .add-group {
+	background: url("../../commons/images/tree/toolbar_ico_newfold.png")
+		no-repeat center center;
+}
+
+.fn .btn-div .modify-group {
+	background: url("../../commons/images/tree/toolbar_ico_edit.png")
+		no-repeat center center;
+}
+
+.fn .btn-div .add-channel {
+	background: url("../../commons/images/tree/toolbar_ico_new.png")
+		no-repeat center center;
+}
+
+.fn .btn-div .delete-group {
+	background: url("../../commons/images/tree/toolbar_ico_del.png")
+		no-repeat center center;
+}
+
+.fn .btn-div .refresh-group {
+	background: url("../../commons/images/tree/tree_ico_refresh.png")
+		no-repeat center center;
+}
+
+.line-outside {
+	height: 26px;
+	position: relative;
+}
+
+.line-outside .line-inline {
+	border-bottom: 1px solid #E6E6E2;
+	margin: 0px 10px;
+	height: 13px;
+}
+
+.line-outside .line-name {
+	line-height: 26px;
+	padding: 0 12px;
+	position: absolute;
+	left: 40px;
+	font-weight: bold;
+	background-color: white;
+	top: 0px;
+}

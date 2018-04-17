@@ -1,0 +1,46 @@
+body{
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	font-size: 13px;
+	font-family: Microsoft Yahei;
+	overflow: hidden;
+}
+
+.float_left{
+	float: left;
+}
+
+.margin_left{
+	margin-left: 10px;
+}
+
+.margin_top{
+	margin-top: 10px;
+}
+
+.padding_css{ 
+	padding: 10px;
+}
+.padding_left{
+	padding-left: 10px;
+}
+.padding_right{
+	padding-right: 10px;
+}
+.padding_tb{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.padding_lr{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.alarm_txt{
+	margin-left: 20px;
+	margin-top: 30px;
+	padding-left: 40px;
+	line-height: 32px;
+	background: url("../../commons/images/dialogbox_ico_prompt.png") no-repeat;
+}

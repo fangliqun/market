@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>商品</title>
+<include file="/a.html"/>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<link rel="stylesheet" href="common/common.css"/>
+<link rel="stylesheet" href="common/common-self.css"/>
+<link rel="stylesheet" href="puck/css/puck.css"/><!-- 最前面 -->
+<link rel="stylesheet" href="css/goods.css"/>
+<!-- <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> -->
+<script type="text/javascript" src="puck/puck.all.js"></script>
+<script type="text/javascript" src="js/goods.js"></script>
+
+</head>
+<body>
+<div class="pk-nav">  
+    <div class="nav-head">  
+        <i class="nav-logo"></i>  
+        <span class="nav-title">幸福商店</span> 
+    </div>  
+    <div class="nav-body nav-operate">  
+        <ul>  
+            <li>  
+                <a class="nav-item active navA" href="javascript:void(0);">  
+                    <i class="icon"></i>  
+                    <span class="name">商品</span>    
+                </a>  
+            </li>  
+            <li>  
+                <a class="nav-item navB" href="javascript:void(0);">  
+                    <i class="icon"></i>  
+                    <span class="name">订单</span>  
+                </a>  
+            </li>  
+             <li>  
+                <a class="nav-item navC" href="javascript:void(0);">  
+                    <i class="icon"></i>  
+                    <span class="name">统计</span>    
+                </a>  
+            </li>  
+        </ul>  
+    </div>  
+    <div class="nav-foot">  
+        <a href="javascript:void(0);" class="func-item user-operate nav-menu-operate">  
+            <div class="limit-wrapper">  
+                <i class="icon"></i>  
+                <span class="name" title="ADMINX">ADMINX</span>  
+            </div>  
+            <i class="dropdown-arrow"></i>  
+            <div class="nav-menu operate-menu-white">  
+                <ul>  
+                   
+                    <li>  
+                        <div class="menu-item logout">  
+                            <i class="icon"></i>  
+                            <span class="name">退出系统</span>  
+                        </div>  
+                    </li>  
+                </ul>  
+            </div>  
+        </a>  
+   
+        
+    </div>
+</div>  
+  
+<div class="crud ">
+	<ul >  
+            <li>  
+                <a class="add" href="javascript:void(0);">  
+                    <i class="icon"></i>  
+                    <span class="name">增加</span>  
+                </a>  
+            </li>  
+         	<li>  
+                <a class="buymany" href="javascript:void(0);">  
+                    <i class="icon"></i>  
+                    <span class="name">购买</span>  
+                </a>  
+            </li>  
+            <li>  
+                <a class="delete" href="javascript:void(0);">  
+                    <i class="icon"></i>  
+                    <span class="name">删除</span>  
+                </a>  
+            </li>  
+        </ul>  
+</div>
+<div id="goodsform" class="goodsform" style="display:none">
+	<form action="#" class="addGoods">  
+	    <!-- <div class="control-group">  
+	        <div class="control-label"><em>*</em>名称：</div>  &nbsp;&nbsp;
+	        <div class="controls">  
+	            <input class="goodsname" maxlength="30" value="" required="required" vtype="common" type="text" />  
+	        </div>   
+	        <select id="DropList" style="width:200px,height:24px;">  
+	        <option value="1">停车场</option>  
+	        <option value="5">广场</option>  
+	        <option value="7">水域</option>  
+	        <option value="9">公路</option>  
+   			 </select>  
+	    </div> -->
+	    <div class="control-group">  
+	        <div class="control-label"><em>*</em>名称：</div>  
+	        <div class="controls">  
+	            <input class="goodsnamexxxx" maxlength="30" onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')" value="" required="required" vtype="common" type="text" />  
+	        </div>  
+	    </div>   
+	    <div class="control-group">  
+	        <div class="control-label"><em>*</em>价格：</div>  
+	        <div class="controls">  
+	            <input class="money" maxlength="30"   value="" onkeyup="value=value.replace(/[^\d]/g,'')" required="required" vtype="common" type="text" />  
+	        </div>  
+	    </div> 
+		<div class="control-group">  
+	        <div class="control-label"><em>*</em>数量：</div>  
+	        <div class="controls">  
+	            <input class="inventory" maxlength="30" value="" onkeyup="value=value.replace(/[^\d]/g,'')" required="required" vtype="common" type="text" />  
+	        </div>  
+	    </div> 
+	   <!--  <div class="login">
+	    <div class="login"><input type="button" id="shangchuan" value="上传"/>
+	    <input type="button" id="quxiao" value="取消"/>
+	    </div>  </div>-->
+	    
+	</form>  
+</div>
+<div class="update" id="update" style="display:none">
+	<form action="#" class="updateGoods">  
+			<div class="control-group">  
+		        <div class="control-label"><em>*</em>编号：</div>  
+		        <div class="controls">  
+		          <div class="bianhao"></div> 
+		        </div>  
+		    </div>  
+		    <div class="control-group">  
+		        <div class="control-label"><em>*</em>名称：</div>  
+		        <div class="controls">  
+		            <input class="goodsnames" maxlength="30" onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')" value=""  vtype="common" type="text" />  
+		        </div>  
+		    </div>  
+		    <div class="control-group">  
+		        <div class="control-label"><em>*</em>价格：</div>  
+		        <div class="controls">  
+		            <input class="moneys" maxlength="30" value=""  onkeyup="value=value.replace(/[^\d]/g,'')" vtype="common" type="text" />  
+		        </div>  
+		    </div> 
+			<div class="control-group">  
+		        <div class="control-label"><em>*</em>数量：</div>  
+		        <div class="controls">  
+		            <input class="inventorys" maxlength="30" value="" onkeyup="value=value.replace(/[^\d]/g,'')"  vtype="common" type="text" />  
+		        </div>  
+		    </div> 
+	</form> 
+</div>  
+<div class="buymany" id="buymany" style="display:none">
+	<form action="#" class="buymanyGoods"> 
+		<div class="zz">
+			 <div class="a" id="0"> 
+		        <div class="b">
+		        名称： <select id="c" style="width:100px;"></select> 
+		        &nbsp; <span class="money"  style="width:100px;">价格： &nbsp;<span  class="howmoney"></span>   </span>  
+		        <span class="number">购买数量：<input type="text" style="width:100px;" onkeyup="value=value.replace(/[^\d]/g,'')"  maxlength="3"  class="ss"  />  </span>  
+		        &nbsp; <span class="total">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;共计: <span class="x"></span> </span>   &nbsp;
+		        </div>
+		    </div> 
+		    <!--  <div class="a" id="a1"> 
+		        <div class="b">名称： <select id="c" style="width:100px;"></select> 
+		        &nbsp; <span class="goumai"  style="width:100px;">价格： &nbsp;&nbsp; &nbsp;&nbsp;<span  class="howmoney"></span>   </span>  
+		        <span class="sss">购买数量：<input type="text" style="width:100px;"  maxlength="3"  class="ss"  />  </span>  
+		        &nbsp; <span class="total">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;共计: <span class="x"></span> </span>   &nbsp;
+		        </div>
+		    </div>  -->
+		  </div> 
+		  <div class="jia"></div>
+		  <div class="totalmoney">共计:<span class="t"></span></div>
+	</form>  
+</div>
+ <div id="DataGrid" class="datagrid" style="height:80%;"></div>  
+ <div class="notice">
+        <div class="notice_title">通知公告</div>
+        <div class="notice_list" id="notice_list_content">
+            <ul class="l">
+                <!-- <li><a href="#">西南交通大学面向海内外公开招聘部分管理岗位的公告(2016年第4号)</a><span class="date">2016-09-27</span>  </li>
+                <li><a href="#">关于沱江河停止放水及犀浦校区人工湖水位相关情况的通报</a><span class="date">2016-09-27</span></li>
+                <li><a href="#">关于组织2016年国庆“老年健身走“活动的通知</a><span class="date">2016-09-27</span></li>
+                <li><a href="#">关于举行“交通领域发展现状及干部成长”公开课的通知</a><span class="date">2016-09-27</span></li> -->
+            </ul>
+            
+        </div><!-- notice_title结束 -->
+  </div>
+</body>
+</html>

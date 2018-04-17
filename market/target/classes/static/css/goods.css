@@ -1,0 +1,130 @@
+.navA .icon{  
+	background-image:url("/picture/toolbar_ico_edit.png");
+	width:20px;
+	height:20px;
+}
+.navB .icon{  
+	background-image:url("/picture/toolbar_ico_edit.png");
+	width:20px;
+	height:20px;
+}
+.navC .icon{  
+	background-image:url("/picture/toolbar_ico_edit.png");
+	width:20px;
+	height:20px;
+}
+.crud{
+	line-height:30px;
+	background-color:LightGoldenRodYellow ;
+}
+.crud li{
+	margin-left:50px;
+	width:50px;
+	display:inline;
+	list-style: none;/* 将默认的列表符号去掉 */
+}
+.add{
+	width:50px;
+	display:inline-block;
+}
+.add .icon{
+	background-image:url("/picture/toolbar_ico_new.png");
+	background-repeat:no-repeat;
+	width:20px;
+	height:20px;
+	display:inline-block;
+	vertical-align:middle;
+}
+.delete .icon{
+	background-image:url("/picture/toolbar_ico_del.png");
+	background-repeat:no-repeat;
+	width:20px;
+	height:20px;
+	display:inline-block;
+	vertical-align:middle;
+}
+.buymany .icon{
+	background-image:url("/picture/list_btn_up_O.png");
+	background-repeat:no-repeat;
+	width:20px;
+	height:20px;
+	display:inline-block;
+	vertical-align:middle;
+}
+.goodsform{
+	display:none;
+}
+.login{
+	margin-left:100px;
+}
+.datagrid{
+	background-color:LightGoldenRodYellow ;
+}
+.money{
+	width:100px;
+	display:inline-block;
+}
+.howmoney{
+	width:50px;
+	display:inline-block;
+}
+.number{
+	width:200px;
+	display:inline-block;
+}
+.total{
+	width:100px;
+	display:inline-block;
+}
+.jia{
+	background-image:url("/picture/toolbar_ico_edit.png");
+	background-repeat:no-repeat;
+	width:20px;
+	height:20px;
+}
+.totalmoney{
+	float:right;
+	width:120px;
+}
+.news{
+	background-color:LightGoldenRodYellow ;
+}
+
+
+.notice {
+        width: 840px;
+        margin: 0 auto;
+        margin-top: 10px;
+        height: 100px;
+    }
+    .notice_title {
+        color: #fff;
+        font-family: "微软雅黑";
+        font-size: 16px;
+        margin-top: 10px;
+        padding: 5px 8px 5px 20px;
+        text-align: center;
+        background-color:#025483; 
+        width: 120px;
+        float: left;
+    }
+    .notice_list {
+        width: 680px;
+        float: right;
+        height: 33px;
+        overflow: hidden;    
+    }
+    .notice_list li{
+        /* list-style-type: none; */
+        height: 33px;
+    }
+    .notice_list a:link,.notice_list a:visited{
+        color: #333;
+        font-size: 16px; 
+    }
+    .notice_list a:hover,.notice_list a:active{
+        color: #025483;
+        font-weight: bold;
+    }
+    
+    
