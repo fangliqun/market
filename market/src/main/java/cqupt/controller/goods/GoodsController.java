@@ -14,4 +14,9 @@ public class GoodsController {
 	public String show(HttpSession session){
 		return "goods";
 	}
+	
+	@RequestMapping(value="/goodsUser",method=RequestMethod.GET)
+	public String goodsUser(HttpSession session){
+		return "goodsUser";
+	}
 }

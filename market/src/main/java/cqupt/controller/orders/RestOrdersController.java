@@ -3,6 +3,9 @@ package cqupt.controller.orders;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,7 +82,10 @@ public class RestOrdersController {
 	}
 	
 	@RequestMapping(value="/selectOrders",method=RequestMethod.GET)
-	public String selectOrders(Integer start, Integer limit){
+	public String selectOrders(Integer start, Integer limit,HttpServletRequest request){
+		HttpSession session=request.getSession();
+		String username=(String) session.getAttribute("username");
+		System.out.println(username);
 		String page=ordersService.selectOrders(start-1,limit);
 		if(page!=null){
 			JSONObject jo=(JSONObject) JSON.parse(page);
@@ -94,15 +100,15 @@ public class RestOrdersController {
 		}
 	}
 	
-//	@RequestMapping(value="/selectOrdersByTime",method=RequestMethod.GET)
-//	public String selectOrdersByTime(String time){
-//		List<Orders> o=ordersService.selectOrders(time);
-//		if(o!=null){
-//			return ResponseBo.build(1,"查询成功",o).toJsonString();
-//		}else{
-//			return ResponseBo.build(0,"查询失败",o).toJsonString();
-//		}
-//	}
+	@RequestMapping(value="/selectOrdersByusername",method=RequestMethod.GET)
+	public String selectOrdersByusername(String username){
+		List<Orders> o=ordersService.selectOrdersByusername(username);
+		if(o!=null){
+			return ResponseBo.build(1,"查询成功",o).toJsonString();
+		}else{
+			return ResponseBo.build(0,"查询失败",o).toJsonString();
+		}
+	}
 	
 	@RequestMapping(value="/selectOrder",method=RequestMethod.GET)
 	public String selectOrder(int orderid){

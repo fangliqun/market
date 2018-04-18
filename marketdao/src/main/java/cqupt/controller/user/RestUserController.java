@@ -31,7 +31,15 @@ public class RestUserController {
 //		user.setPassword(password);
 //		return ResponseBo.build(1,1+"",userService.login(user)).toJsonString();
 		log.warn(username+"登陆本系统，IP:"+request.getRemoteAddr());
-		User user=userService.login(username, password);
 		return userService.login(username, password);
+	}
+	
+	@RequestMapping(value="/registerUser",method=RequestMethod.POST)
+	public User registerUser(@RequestParam("username")String username,@RequestParam("password")String password,HttpServletRequest request){
+		User user =new User(); 
+		user.setUsername(username);
+		user.setPassword(password);
+		log.info("IP:"+request.getRemoteAddr()+",注册了用户"+username);
+		return userService.registerUser(user);
 	}
 }

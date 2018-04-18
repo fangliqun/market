@@ -19,4 +19,11 @@ public class UserServiceImp implements UserService {
 		return userClient.login(username, password);
 	}
 
+	@Override
+	public User registerUser(User user) {
+		String username=user.getUsername();
+		String password=user.getPassword();
+		return userClient.registerUser(username, password);
+	}
+
 }

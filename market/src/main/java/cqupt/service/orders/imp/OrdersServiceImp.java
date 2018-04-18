@@ -54,4 +54,9 @@ public class OrdersServiceImp implements OrdersService{
 		return ordersClient.selectAllOrderGoodsname();
 	}
 
+	@Override
+	public List<Orders> selectOrdersByusername(String username) {
+		return ordersClient.selectOrdersByusername(username);
+	}
+
 }

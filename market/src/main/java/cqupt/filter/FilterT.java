@@ -13,9 +13,11 @@ public class FilterT {
 	        registration.addUrlPatterns("/orders/*");
 	        registration.addUrlPatterns("/goods/*");
 	        registration.addUrlPatterns("/total/*");
+	        registration.addUrlPatterns("/goodsUser/*");
 	        registration.addUrlPatterns("/orders.html");
 	        registration.addUrlPatterns("/goods.html");
 	        registration.addUrlPatterns("/total.html");
+	        registration.addUrlPatterns("/goodsUser.html");
 	        registration.addInitParameter("paramName", "paramValue");
 	        registration.setName("sessionFilter");
 	        return registration;

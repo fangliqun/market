@@ -52,4 +52,9 @@ public class OrdersServiceImp implements OrdersService{
 		return ordersDao.findAll();
 	}
 
+	@Override
+	public List<Orders> selectOrdersByusername(String username) {
+		return ordersDao.selectOrdersByusername(username);
+	}
+
 }

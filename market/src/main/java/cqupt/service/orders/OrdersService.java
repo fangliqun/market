@@ -15,6 +15,8 @@ public interface OrdersService {
 	
 	List<Orders> selectOrders();
 	
+	List<Orders> selectOrdersByusername(String username);
+	
 	String selectOrders(Integer start, Integer limit);
 	
 	Orders selectOrder(int orderid);

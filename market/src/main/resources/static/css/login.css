@@ -3,7 +3,10 @@ html,body{
 	width:100%;
 	padding:0;
 	mragin:0;
+	overflow:hidden;
 	background-color:#FFFFE0;
+	background-image:url(../picture/8.jpg);
+	background-attachment:fixed
 }
 .form{
 	height:300px;
@@ -12,10 +15,13 @@ html,body{
 	margin-top:25%;
 }
 .np{
-	width:70px;
+	width:90px;
 	display:inline-block;
 }
 .password{
+	margin-top:50px;
+}
+.passwordC{
 	margin-top:50px;
 }
 .login{
@@ -23,7 +29,10 @@ html,body{
 	height:30px;
 	margin-right:50px;
 	margin-top:50px;
-	float:right;
+	display:inline;
+}
+.register{
+	display:inline;
 }
 
 
