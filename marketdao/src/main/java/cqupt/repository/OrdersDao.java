@@ -21,4 +21,7 @@ public interface OrdersDao	extends JpaRepository<Orders, Integer> {
 	@Query("from Orders o where o.time=?1 ")//?
 	public List<Orders> selectOrders(String time);
 	
+	@Query("from Orders o where o.username=?1 ")//?
+	public List<Orders> selectOrdersByusername(String username);
+	
 }

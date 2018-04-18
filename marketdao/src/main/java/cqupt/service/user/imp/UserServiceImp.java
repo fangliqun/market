@@ -15,4 +15,8 @@ public class UserServiceImp implements UserService {
 	public User login(String username,String password) {
 		return userEhcacheRepository.selectByUsername(username,password);
 	}
+	@Override
+	public User registerUser(User user) {
+		return userEhcacheRepository.save(user);
+	}
 }

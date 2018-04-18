@@ -27,9 +27,23 @@ public class RestUserController {
 	
 	private static Logger log = Logger.getLogger(RestUserController.class);  
 
+	@RequestMapping(value="/registerUser",method=RequestMethod.POST)
+	public String registerUser(HttpServletRequest request,String username,String password){
+		User user =new User();
+		user.setUsername(username);
+		user.setPassword(password);
+		User registerUser=userService.registerUser(user);
+		if(registerUser!=null) {
+			return ResponseBo.build(1, "注册成功", registerUser).toJsonString();
+		}else {
+			return ResponseBo.build(0, "注册失败", registerUser).toJsonString();
+		}
+		
+	}
 	
 	@RequestMapping(value="/userLogin",method=RequestMethod.POST)
 	public String UserLogin(HttpServletRequest request,String username,String password){
+		log.warn(username+"1登陆本系统，IP:"+request.getRemoteAddr());
 		User user =new User();
 		user.setUsername(username);
 		user.setPassword(password);

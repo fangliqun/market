@@ -80,6 +80,11 @@ public class RestOrdersController {
 		return ordersService.selectOrders(time);
 	}
 	
+	@RequestMapping(value="/selectOrdersByusername",method=RequestMethod.GET)
+	public List<Orders> selectOrdersByusername(@RequestParam("username")String username){
+		return ordersService.selectOrdersByusername(username);
+	}
+	
 	@RequestMapping(value="/selectOrder",method=RequestMethod.GET)
 	public Orders selectOrder(@RequestParam("orderid")int orderid){
 		return ordersService.selectOrder(orderid);

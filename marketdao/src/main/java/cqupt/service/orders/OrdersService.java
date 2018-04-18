@@ -17,6 +17,8 @@ public interface OrdersService {
 	
 	List<Orders> selectOrders(String time);
 	
+	List<Orders> selectOrdersByusername(String username);
+	
 	Orders selectOrder(int orderid);
 	
 	Page<Orders> selectOrders(Pageable p);

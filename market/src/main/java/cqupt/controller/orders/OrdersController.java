@@ -12,4 +12,9 @@ public class OrdersController {
 	public String show(){
 		return "orders";
 	}
+	
+	@RequestMapping(value="/ordersUser",method=RequestMethod.GET)
+	public String ordersUser(){
+		return "ordersUser";
+	}
 }

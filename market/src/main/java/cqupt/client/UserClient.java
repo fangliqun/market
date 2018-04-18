@@ -16,4 +16,7 @@ import cqupt.domain.User;
 public interface UserClient {
 	@RequestMapping(value="/login",method = RequestMethod.POST)
 	public User login(@RequestParam("username")String username,@RequestParam("password")String password);
+	
+	@RequestMapping(value="/registerUser",method = RequestMethod.POST)
+	public User registerUser(@RequestParam("username")String username,@RequestParam("password")String password);
 }

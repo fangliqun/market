@@ -37,5 +37,8 @@ public interface OrdersClient {
 	@RequestMapping(value="/selectAllOrderGoodsname",method = RequestMethod.GET)
 	public String selectAllOrderGoodsname();
 	
+	@RequestMapping(value="/selectOrdersByusername",method = RequestMethod.GET)
+	public List<Orders> selectOrdersByusername(@RequestParam("username")String username);
+	
 	
 }
