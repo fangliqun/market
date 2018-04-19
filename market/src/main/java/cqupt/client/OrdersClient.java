@@ -21,10 +21,10 @@ public interface OrdersClient {
 	
 	@RequestMapping(value="/insertOrders",method = RequestMethod.POST)
 	public Orders insertOrders(@RequestParam("goodsname")String goodsname,@RequestParam("time")String time,
-			@RequestParam("username")String username,@RequestParam("number")int number);
+			@RequestParam("username")String username,@RequestParam("number")int number,@RequestParam("address")String address,@RequestParam("callnumber")String callnumber);
 	
 	@RequestMapping(value="/selectOrderss",method = RequestMethod.GET)
-	public String selectOrders(@RequestParam("start")int start,@RequestParam("limit")int limit);
+	public String selectOrders(@RequestParam("start")int start,@RequestParam("limit")int limit,@RequestParam("username")String  username);
 	
 	@RequestMapping(value="/selectOrder",method = RequestMethod.GET)
 	public Orders selectOrder(@RequestParam("orderid")int orderid);

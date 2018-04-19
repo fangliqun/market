@@ -17,7 +17,7 @@ public interface OrdersService {
 	
 	List<Orders> selectOrdersByusername(String username);
 	
-	String selectOrders(Integer start, Integer limit);
+	String selectOrders(Integer start, Integer limit,String username);
 	
 	Orders selectOrder(int orderid);
 	

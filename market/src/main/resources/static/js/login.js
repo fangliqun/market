@@ -42,13 +42,15 @@ $(document).ready(function(){
 	               'class' : 'button button-minor',  
 	                click : function() {
 	                	var username=$('#usernameA').val();
+	                	var address=$('#address').val();
+	                	var callnumber=$('#callnumber').val();
 	                	var password=$('#passwordA').val();
 	                	var passwordC=$('#passwordCA').val();
 	                	if(password==passwordC){
 	                		$.ajax({
 		    	    			url:'/registerUser',
 		    	    			type: 'POST',
-		    	    			data:{"username":username,"password":password},
+		    	    			data:{"username":username,"password":password,"address":address,"callnumber":callnumber},
 		    	    			dataType:'json',
 		    	    			async: true,
 		    	    			success:function(data){

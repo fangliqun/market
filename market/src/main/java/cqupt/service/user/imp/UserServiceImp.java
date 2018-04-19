@@ -23,7 +23,14 @@ public class UserServiceImp implements UserService {
 	public User registerUser(User user) {
 		String username=user.getUsername();
 		String password=user.getPassword();
-		return userClient.registerUser(username, password);
+		String address =user.getAddress();
+		String callnumber=user.getCallnumber();
+		return userClient.registerUser(username, password,address,callnumber);
+	}
+
+	@Override
+	public User selectUserByUsername(String username) {
+		return userClient.selectUserByUsername(username);
 	}
 
 }

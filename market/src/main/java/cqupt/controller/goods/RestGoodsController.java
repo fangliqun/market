@@ -48,6 +48,9 @@ public class RestGoodsController {
 	@Autowired
 	private OrdersService ordersService;
 	
+	@Autowired
+	private UserService userService;
+	
 	 @Autowired
 	 private AmqpTemplate rabbitTemplate;
 	
@@ -114,11 +117,14 @@ public class RestGoodsController {
 			String time=formatter.format(date);
 			
 			
+			User user=userService.selectUserByUsername(username);
 			Orders order=new Orders();
 			order.setGoodsname(goodsname);
 			order.setUsername(username);
 			order.setTime(time);
 			order.setNumber(number);
+			order.setAddress(user.getAddress());
+			order.setCallnumber(user.getCallnumber());
 			
 			
 			Orders o=ordersService.insertOrders(order);

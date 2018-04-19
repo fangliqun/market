@@ -15,6 +15,10 @@ public class User  implements Serializable{
 	private Integer userid;
 	private String username;
 	private String password;
+    private String address;
+    private String callnumber;
+	    
+	    
 	 @Id 
 	 @Column(name = "userid", nullable = false)   
 	 @GeneratedValue(strategy = GenerationType.AUTO)//唯一主键
@@ -37,5 +41,20 @@ public class User  implements Serializable{
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	} 
+	@Column(name="address")
+	public String getAddress() {
+		return address;
+	}
+    
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	@Column(name="callnumber")
+	public String getCallnumber() {
+		return callnumber;
+	}
+	public void setCallnumber(String callnumber) {
+		this.callnumber = callnumber;
 	}
 }

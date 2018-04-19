@@ -6,7 +6,7 @@ $(document).ready(function(){
     
     var grid = new pk.Ajaxgrid({  
         el: $('#DataGrid'),  
-        url: '/selectOrdersByusername', //用以获取分页数据的请求  
+        url: '/selectOrders', //用以获取分页数据的请求  
         type: 'Get',  
         idField: 'orderid',  
         autoHeight: false,  
@@ -29,6 +29,14 @@ $(document).ready(function(){
 	         text:'订单者',
 	         weight:40,
         },{  
+        	field: 'address',
+	         text:'地址',
+	         weight:40,
+       },{  
+	      	field: 'callnumber',
+	       text:'电话',
+	       weight:40,
+       },{  
         	field: 'time',
 	         text:'订单时间',
 	         weight:40,

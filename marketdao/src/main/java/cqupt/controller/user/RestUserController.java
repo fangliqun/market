@@ -31,14 +31,25 @@ public class RestUserController {
 //		user.setPassword(password);
 //		return ResponseBo.build(1,1+"",userService.login(user)).toJsonString();
 		log.warn(username+"登陆本系统，IP:"+request.getRemoteAddr());
+		System.out.println("ssss"+userService.login(username, password).getUsername());
 		return userService.login(username, password);
 	}
 	
+	
+	
+	@RequestMapping(value="/selectUserByUsername",method=RequestMethod.POST)
+	public User selectUserByUsername(@RequestParam("username")String username){
+		return userService.selectUserByUsername(username);
+	}
+	
 	@RequestMapping(value="/registerUser",method=RequestMethod.POST)
-	public User registerUser(@RequestParam("username")String username,@RequestParam("password")String password,HttpServletRequest request){
+	public User registerUser(@RequestParam("username")String username,@RequestParam("password")String password,
+			@RequestParam("address")String address,@RequestParam("callnumber")String callnumber,HttpServletRequest request){
 		User user =new User(); 
 		user.setUsername(username);
 		user.setPassword(password);
+		user.setAddress(address);
+		user.setCallnumber(callnumber);
 		log.info("IP:"+request.getRemoteAddr()+",注册了用户"+username);
 		return userService.registerUser(user);
 	}

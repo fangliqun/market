@@ -2,9 +2,15 @@ package cqupt.service.orders.imp;
 
 import java.util.List;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
 import cqupt.domain.Goods;
@@ -27,8 +33,19 @@ public class OrdersServiceImp implements OrdersService{
 	}
 
 	@Override
-	public Page<Orders> selectOrders(Pageable p) {
-		return ordersDao.findAll(p);
+	public Page<Orders> selectOrders(Pageable p,final String username) {
+		if(username.equals("hq")) {
+			return ordersDao.findAll(p);
+		}
+		Specification<Orders> specification = new Specification<Orders>() {
+			@Override
+			public javax.persistence.criteria.Predicate toPredicate(Root<Orders> root, CriteriaQuery<?> query,
+					CriteriaBuilder criteriaBuilder) {
+			    Predicate condition  = (Predicate) criteriaBuilder.equal(root.get("username"), username);
+				return criteriaBuilder.and(condition);
+			}
+		};
+		return ordersDao.findAll(specification,p);
 	}
 
 	@Override
@@ -43,7 +60,6 @@ public class OrdersServiceImp implements OrdersService{
 
 	@Override
 	public List<Orders> selectOrders() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

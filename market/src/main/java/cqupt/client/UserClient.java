@@ -17,6 +17,9 @@ public interface UserClient {
 	@RequestMapping(value="/login",method = RequestMethod.POST)
 	public User login(@RequestParam("username")String username,@RequestParam("password")String password);
 	
+	@RequestMapping(value="/selectUserByUsername",method = RequestMethod.POST)
+	public User selectUserByUsername(@RequestParam("username")String username);
+	
 	@RequestMapping(value="/registerUser",method = RequestMethod.POST)
-	public User registerUser(@RequestParam("username")String username,@RequestParam("password")String password);
+	public User registerUser(@RequestParam("username")String username,@RequestParam("password")String password,@RequestParam("address")String address,@RequestParam("callnumber")String callnumber);
 }
