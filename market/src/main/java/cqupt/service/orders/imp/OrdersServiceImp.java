@@ -24,13 +24,14 @@ public class OrdersServiceImp implements OrdersService{
 	
 	@Override
 	public Orders insertOrders(Orders order){
-		return ordersClient.insertOrders(order.getGoodsname(),order.getTime(),order.getUsername(),order.getNumber());
+		return ordersClient.insertOrders(order.getGoodsname(),order.getTime(),order.getUsername(),order.getNumber(),
+				                         order.getAddress(),order.getCallnumber());
 	}
 
 
 	@Override
-	public String selectOrders(Integer start, Integer limit) {
-		return ordersClient.selectOrders(start,limit);
+	public String selectOrders(Integer start, Integer limit,String username) {
+		return ordersClient.selectOrders(start,limit,username);
 	}
 
 	@Override

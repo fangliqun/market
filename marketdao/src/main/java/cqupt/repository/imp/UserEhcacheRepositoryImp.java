@@ -52,9 +52,16 @@ public class UserEhcacheRepositoryImp implements UserEhcacheRepository {
     @Cacheable(key = "#p0")
 	@Override
 	public User selectByUsername(String username,String password) {
-    	System.out.println("aaaaaaaaaaaaaaaaaaaaa"+username);
         logger.info("查询功能，缓存未找到，直接读取数据库，username为：" + username);
         return userDao.login(username,password);
+	}
+    
+    
+    @Cacheable(key = "#p0")
+	@Override
+	public User selectUserByUsername(String username) {
+		 logger.info("查询功能，缓存未找到，直接读取数据库，username为：" + username);
+		return userDao.selectUserByUsername(username);
 	}
 
 }

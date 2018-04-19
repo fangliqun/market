@@ -21,7 +21,7 @@ public interface OrdersService {
 	
 	Orders selectOrder(int orderid);
 	
-	Page<Orders> selectOrders(Pageable p);
+	Page<Orders> selectOrders(Pageable p,String userame);
 	
 	List<Orders> selectAllOrder();
 	

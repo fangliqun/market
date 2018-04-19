@@ -24,6 +24,8 @@ public interface UserEhcacheRepository {
      * @return 用户
      */
     User selectByUsername(String username,String password);
+    
+    User selectUserByUsername(String username);
 
     /**
      * 更新用户

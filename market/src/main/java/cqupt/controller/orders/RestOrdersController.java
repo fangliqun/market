@@ -85,8 +85,7 @@ public class RestOrdersController {
 	public String selectOrders(Integer start, Integer limit,HttpServletRequest request){
 		HttpSession session=request.getSession();
 		String username=(String) session.getAttribute("username");
-		System.out.println(username);
-		String page=ordersService.selectOrders(start-1,limit);
+		String page=ordersService.selectOrders(start-1,limit,username);
 		if(page!=null){
 			JSONObject jo=(JSONObject) JSON.parse(page);
 			JSONObject json = new JSONObject();

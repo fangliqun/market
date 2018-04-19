@@ -16,6 +16,7 @@ public class Goods implements Serializable{
 	private	Integer money;
 	private Integer inventory;//货存
 	private String  goodsname;
+	
 	@Id 
 	 @Column(name = "goodsid", nullable = false)   
 	 @GeneratedValue(strategy = GenerationType.AUTO)

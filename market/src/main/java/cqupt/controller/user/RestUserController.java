@@ -28,10 +28,13 @@ public class RestUserController {
 	private static Logger log = Logger.getLogger(RestUserController.class);  
 
 	@RequestMapping(value="/registerUser",method=RequestMethod.POST)
-	public String registerUser(HttpServletRequest request,String username,String password){
+	public String registerUser(HttpServletRequest request,String username,String password,String address,String callnumber){
+		System.out.println("s"+callnumber);
 		User user =new User();
 		user.setUsername(username);
 		user.setPassword(password);
+		user.setAddress(address);
+		user.setCallnumber(callnumber);
 		User registerUser=userService.registerUser(user);
 		if(registerUser!=null) {
 			return ResponseBo.build(1, "注册成功", registerUser).toJsonString();
@@ -48,6 +51,7 @@ public class RestUserController {
 		user.setUsername(username);
 		user.setPassword(password);
 		User loginuser=userService.login(user);
+		System.out.println("ssss"+loginuser.getUsername());
 		if(loginuser!=null){
 			System.out.println(loginuser.getPassword()+"sss"+password);
 			if(loginuser.getPassword().equals(password)) {

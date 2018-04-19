@@ -58,21 +58,23 @@ public class RestOrdersController {
 //	}
 	@RequestMapping(value="/insertOrders",method=RequestMethod.POST)
 	public Orders insertOrders(@RequestParam("goodsname")String goodsname,@RequestParam("time")String time,
-			@RequestParam("username")String username,@RequestParam("number")int number){
+			@RequestParam("username")String username,@RequestParam("number")int number,@RequestParam("address")String address,@RequestParam("callnumber")String callnumber){
 		Orders o=new Orders();
 		o.setGoodsname(goodsname);
 		o.setTime(time);
 		o.setUsername(username);
 		o.setNumber(number);
+		o.setAddress(address);
+		o.setCallnumber(callnumber);
 		log.warn("用户购买了"+goodsname);
 		return ordersService.insertOrders(o);
 	}
 	
 	@RequestMapping(value="/selectOrderss",method=RequestMethod.GET)
-	public String selectOrderss(Integer start, Integer limit){
+	public String selectOrderss(Integer start, Integer limit,String username){
 		Sort sort=new Sort(Direction.DESC,"time");
 		Pageable p=new PageRequest(start,limit,sort);
-		return JSON.toJSONString(ordersService.selectOrders(p));
+		return JSON.toJSONString(ordersService.selectOrders(p,username));
 	}
 	
 	@RequestMapping(value="/selectOrders",method=RequestMethod.GET)
